@@ -4,7 +4,7 @@ export type TCardProps = {
   content: {
     title: string,
     descripton: string,
-    button: string,
+    button?: string,
   },
 }
 
@@ -15,7 +15,8 @@ const Card = ({children, content}: PropsWithChildren<TCardProps>) => {
       <div className="card-body">
         <h5 className="card-title">{content.title}</h5>
         <p className="card-text">{content.descripton}</p>
-        <a href="#" className="btn btn-primary">{content.button}</a>
+        {content.button ? 
+        <a href="#" className="btn btn-primary">{content.button}</a> : false}
       </div>
     </div>    
   );

@@ -1,5 +1,9 @@
 import Card, { TCardProps } from "./components/cards/Card";
 import Image from "./components/cards/Image";
+import { SiPlanetscale } from "react-icons/si";
+import { TListItem } from "./components/decomposition/ListItem";
+import List from "./components/decomposition/List";
+
 
 const card1: TCardProps = {
   content: {
@@ -16,6 +20,26 @@ const card2: TCardProps = {
     descripton: `Some quick example text to build on the card title and make up the
     bulk of the card's content`,
     button: 'Go somewhere',
+  }
+}
+
+const news: TListItem[] = [
+  {
+    icon: <SiPlanetscale />,
+    title: 'world news',
+    link: 'http://vk.com',
+  },
+  {
+    icon: <SiPlanetscale />,
+    title: 'world news',
+    link: 'http://vk.com',
+  }
+];
+
+const card3: TCardProps = {
+  content: {
+    title: "Работа над ошибками",
+    descripton: "Смотрите на Яндексе",
   }
 }
 
@@ -36,8 +60,11 @@ function App() {
         </div>
       </div>
       <div className="task">
-        <h4>Задача 2. </h4>
-        {/* <Steps />         */}
+        <h4>Задача 2. Декомпозиция</h4>
+        <List items={news}/>
+        <Card content={card3.content}>
+          <Image src="https://expange.ru/img/upload/1/7/409.png" />
+        </Card>
       </div>
       <div className="task">
         <h4>Задача 3. </h4>
