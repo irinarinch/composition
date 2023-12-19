@@ -7,6 +7,7 @@
 
 .task {
   margin-bottom: 50px;  
+  padding: 10px 50px;
 }
 
 h1 {
@@ -24,4 +25,88 @@ h4 {
   align-items: flex-start;
 }
 
+a {
+  color: black;
+}
 
+.time {
+  color: rgb(172, 171, 171);
+  font-size: small;
+  margin-top: 8px;
+}
+
+.logo {
+  width: 100px;
+  margin-right: 20px;
+  position: absolute;
+  left: -70px;
+  top: 40px;
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+}
+
+.banner {
+  width: 70%;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+.my-masonry-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px 40px ;
+} 
+
+.my-masonry-grid-column {  
+  background-clip: border-box;
+  max-width: 400px; 
+}
+
+.widget_box {
+  margin: 20px auto;
+  position: relative;
+}
+
+.widget_box > ul {
+  padding-inline-start: 0;
+}
+
+.widget_title {
+  color: rgb(3, 49, 165);
+}
+
+.current_temperature {
+  font-size: 25px;
+  vertical-align: middle;
+  padding: 0px 20px;
+}
+
+.widget_weather {
+  display: flex;
+}
+
+.day_temperature {
+  font-size: medium;
+  line-height: 1.2;
+}
+
+.description {
+  padding-right: 10px;
+  color: rgb(172, 171, 171);
+}
+
+.item_title {
+  padding-right: 10px;
+}
+
+.eather_btn {
+  position: absolute;
+  width: 70px;
+  top: 0;
+  left: 160px;
+}

@@ -1,12 +1,13 @@
-type TImage = {
+export type TImage = {
   src: string,
+  class: string,
 }
 
 const Image = (props: TImage) => {  
   return (
     <img
       src={props.src}
-      className="card-img-top"
+      className={props.class}
       alt="gray background"            
     />
   );

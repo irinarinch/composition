@@ -1,49 +1,28 @@
-import Card, { TCardProps } from "./components/cards/Card";
+import Card from "./components/cards/Card";
 import Image from "./components/cards/Image";
-import { SiPlanetscale } from "react-icons/si";
-import { TListItem } from "./components/decomposition/ListItem";
-import List from "./components/decomposition/List";
+import News from "./components/decomposition/News";
+import Teaser from "./components/decomposition/Teaser";
+import Quotes from "./components/decomposition/Quotes";
+import Search from "./components/decomposition/Search";
+import Widgets from "./components/decomposition/Widgets";
 
-
-const card1: TCardProps = {
-  content: {
-    title: 'Card title',
-    descripton: `Some quick example text to build on the card title and make up the
-    bulk of the card's content`,
-    button: 'Go somewhere',
-  }
-}
-
-const card2: TCardProps = {
-  content:{
-    title: 'Card without image',
-    descripton: `Some quick example text to build on the card title and make up the
-    bulk of the card's content`,
-    button: 'Go somewhere',
-  }
-}
-
-const news: TListItem[] = [
-  {
-    icon: <SiPlanetscale />,
-    title: 'world news',
-    link: 'http://vk.com',
-  },
-  {
-    icon: <SiPlanetscale />,
-    title: 'world news',
-    link: 'http://vk.com',
-  }
-];
-
-const card3: TCardProps = {
-  content: {
-    title: "Работа над ошибками",
-    descripton: "Смотрите на Яндексе",
-  }
-}
+import { card1, card2, cardImage, quotes, teaser} from "./data/data";
+import banner from "../public/banner.png";
 
 function App() {
+  const getRow = (component1: JSX.Element, component2: JSX.Element) => {
+    return (
+      <div className="row">
+        <div className="col-8">
+          {component1}
+        </div>
+        <div className="col-4">
+          {component2}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
       <h1>Композиция</h1>
@@ -51,20 +30,23 @@ function App() {
         <h4>Задача 1. Карточки</h4>
         <div className="card-container">
           <Card content={card1.content}>
-            <Image src="https://img.freepik.com/free-photo/light-gray-concrete-wall_53876-89532.jpg?w=900&t=st=1702565509~exp=1702566109~hmac=3c32ef3d44427541bb7047dbefb86b61d4c04bde9fb7f0bbf71971f7c7f8749c" />
+            <Image src={cardImage.src} class={cardImage.class}/>
           </Card>
           <Card content={card2.content} />  
-          <Card content={card1.content}>
-            <Image src="https://img.freepik.com/free-photo/light-gray-concrete-wall_53876-89532.jpg?w=900&t=st=1702565509~exp=1702566109~hmac=3c32ef3d44427541bb7047dbefb86b61d4c04bde9fb7f0bbf71971f7c7f8749c" />
-          </Card>
         </div>
       </div>
       <div className="task">
-        <h4>Задача 2. Декомпозиция</h4>
-        <List items={news}/>
-        <Card content={card3.content}>
-          <Image src="https://expange.ru/img/upload/1/7/409.png" />
-        </Card>
+        <h4>Задача 2. Декомпозиция</h4>  
+        <header>
+          {getRow(<News />, <Teaser data={teaser.data} />)}           
+          <Quotes array={quotes} />
+        </header>
+        <main>
+          <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Yandex_logo_ru.svg/1200px-Yandex_logo_ru.svg.png" alt="logo"/>
+          <Search/> 
+        </main>
+        <Image src={banner} class="banner"/>
+        <Widgets /> 
       </div>
       <div className="task">
         <h4>Задача 3. </h4>
