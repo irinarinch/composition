@@ -5,7 +5,7 @@ import Image from "../cards/Image";
 import { FaCloudShowersHeavy } from "react-icons/fa";
 import { ether, tvProgram, visited } from "../../data/data";
 import Masonry from "react-masonry-css";
-import etherBtn from "../../../public/btn.png";
+import etherBtn from "/btn.png";
 
 /**
  * Отображает а странице виджеты

@@ -7,7 +7,7 @@ import Search from "./components/decomposition/Search";
 import Widgets from "./components/decomposition/Widgets";
 
 import { card1, card2, cardImage, quotes, teaser} from "./data/data";
-import banner from "../public/banner.png";
+import banner from "/banner.png";
 
 function App() {
   const getRow = (component1: JSX.Element, component2: JSX.Element) => {
@@ -47,10 +47,6 @@ function App() {
         </main>
         <Image src={banner} class="banner"/>
         <Widgets /> 
-      </div>
-      <div className="task">
-        <h4>Задача 3. </h4>
-        {/* <ImageManager />  */}
       </div>
     </>
   );
